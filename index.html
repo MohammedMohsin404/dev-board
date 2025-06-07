@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard </title>
+
+    <!-- Daisy UI CDN -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Daisy UI Theme -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg-[rgb(242,246,255)] min-h-screen">
+
+    <main class="container mx-auto">
+        <nav class=" pt-8">
+
+            <div class="navbar bg-base-100 shadow-md rounded-2xl p-6">
+                <div class="flex-1">
+                    <a class="btn btn-ghost text-xl"><img class="w-10" src="./assets/logo.png" alt=""> <span>Dev<span
+                                class="font-bold">Board</span></span></a>
+                </div>
+                <div class="flex ">
+                    <div class="dropdown dropdown-end ">
+                        <div tabindex="0" role="button"
+                            class="btn btn-ghost  bg-[rgb(242,246,255)] mr-8  rounded-3xl p-6 ">
+                            <div class="indicator">
+                                <img class="" src="./assets/checkbox.png" alt="">
+                                <span class="text-3xl ml-4"> 8</span>
+                            </div>
+                        </div>
+                        <div tabindex="0" class="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
+                            <div class="card-body">
+                                <span class="text-lg font-bold">8 Items</span>
+                                <span class="text-info">Subtotal: $999</span>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary btn-block">View cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown dropdown-end bg-[rgb(242,246,255)] rounded-full p-2">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar  ">
+                            <div class="w-10 rounded-full   ">
+                                <img class="" alt="Tailwind CSS Navbar component" src="./assets/theme-btn.png" />
+                            </div>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li>
+                                <a class="justify-between">
+                                    Profile
+                                    <span class="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex space-x-4 mt-8 ">
+            <div class="bg-white h-100 w-100 basis-3/4 rounded-2xl p-2">
+                <div class="flex space-x-4">
+                    <div class="basis-3/12 bg-[rgb(242,246,255)] p-4 ">
+                        <div class="flex justify-center items-center space-y-18 space-x-4 ">
+                            <div class="rounded-full bg-white p-4 ">
+                                <img src="./assets/checkbox.png" alt=""
+                            </div>
+                            <div>
+                                <p class="text-xl">Task Assigned</p>
+                                <h3 class="font-bold text-2xl">6</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="basis-6/12 bg-green-600 w-full h-full"></div>
+                    <div class="basis-3/12 bg-red-600 w-full h-full"></div>
+                </div>
+            </div>
+            <aside class=" bg-white h-100 w-100 rounded-2xl"></aside>
+        </div>
+    </main>
+
+</body>
+
+</html>

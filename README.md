@@ -1,4 +1,4 @@
-## **📅 Deadline For 60 marks**: 2nd March , 2025 ( 11:59 pm ⏱️)
+<!-- ## **📅 Deadline For 60 marks**: 2nd March , 2025 ( 11:59 pm ⏱️)
 
 ## **📅 Deadline For 50 marks**: 3rd March , 2025 ( 11:59 pm ⏱️)
 
@@ -9,8 +9,11 @@
 Follow the given  video strictly to meet all the requirements and Challenges.
 
 ---
-Required Question to Answer at Blog.html
+Required Question to Answer at Blog.html -->
 ---
+
+You will find all of these answer in this site
+
 - Question-1: What are the different ways to select an element in the DOM?
 
 - Question-2: What is the difference between innerHTML, innerText, and textContent ?
