@@ -1,4 +1,49 @@
-console.log("Js COnnected");
+// Task Assign
+
+// ButtonHandler
+
+const buttons = document.querySelectorAll(".buttons");
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector("#history").innerHTML += "";
+    // Increase Task Assign Number
+
+    increaseTaskNumber("task-number", "subtract", 1);
+
+    // Decrease Total Tak Number
+    increaseTaskNumber("total-task-number", "add", 1);
+
+    // Add Title To History
+
+    const parentElement = btn.parentElement.parentElement;
+
+    const taskTitle = parentElement.querySelector("h2").innerText;
+
+    const history = document.querySelector("#history");
+
+        // Task Complete Time
+    const now = new Date();
+
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const timeString = `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+
+    history.innerHTML += `  <div  class="bg-[rgb(242,246,255)] mt-8 p-4 rounded-3xl flex space-x-4">
+                        <div class="rounded-full bg-white p-4 ">
+                            <img src="./assets/checkbox.png" alt="">
+                        </div>
+                        <h3 class="">${taskTitle} completed at <span class="italic">${timeString}</span></h3>
+                    </div>`;
+
+    document.querySelector("#history").innerHTML += "";
+    btn.classList.add("btn-disabled");
+  });
+});
 
 // Current Date
 
@@ -10,71 +55,18 @@ const options = {
   month: "long",
   year: "numeric",
 };
-
 const formattedDate = new Intl.DateTimeFormat("en-GB", options)
   .format(today)
   .replace(",", "");
 
-const date = (getInputValueById("date").innerHTML = formattedDate);
+document.getElementById("current-date").innerText = formattedDate;
 
-console.log(date);
 
-// Assigned Task
-const historyTask = [];
-const history = document.getElementById("history");
-// Button Handler
-const buttons = document.querySelectorAll(".buttons");
-buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    
+// Clear History
+document.querySelector("#btn-history-clear").addEventListener("click",()=>{
+  document.querySelector("#history").innerHTML = ``;
+})
 
-    history.innerHTML += "";
-
-    const taskNumber = getTextValueById("task-number");
-    const newTaskNumber = taskNumber - 1;
-    document.getElementById("task-number").innerText = newTaskNumber;
-
-    const totalTaskNumber = getTextValueById("total-task-number");
-    const newTotalTaskNumber = totalTaskNumber + 1;
-    document.getElementById("total-task-number").innerText = newTotalTaskNumber;
-    // const History
-
-    const parentElement = btn.parentElement.parentElement;
-    const taskTitle = parentElement.querySelector("h2").innerText;
-
-    historyTask.push(taskTitle);
-    console.log(historyTask);
-    // Task Complete Time
-    const now = new Date();
-
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-
-    const timeString = `${hours.toString().padStart(2, "0")}:${minutes
-      .toString()
-      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-
-    historyTask.forEach((task) => {
-      history.innerHTML += `  <div  class="bg-[rgb(242,246,255)] mt-8 p-4 rounded-3xl flex space-x-4">
-                        <div class="rounded-full bg-white p-4 ">
-                            <img src="./assets/checkbox.png" alt="">
-                        </div>
-                        <h3 class="">${task} completed at <span class="italic">${timeString}</span></h3>
-                    </div>`;
-    });
-
-    // console.log();
-    console.log(history);
-    btn.classList.add("btn-disabled");
-  });
-});
-
-const btnHistoryClear=document.getElementById("btn-history-clear")
-btnHistoryClear.addEventListener('click', () => {
-   history.innerHTML=''
-
-  })
 
 
 // Theme Color Change
@@ -122,6 +114,3 @@ themeButton.addEventListener("click", () => {
 
   document.documentElement.setAttribute("data-theme", randomTheme);
 });
-
-
-
