@@ -33,9 +33,9 @@ buttons.forEach((btn) => {
       .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 
 
-    history.innerHTML += `  <div  class="bg-[rgb(242,246,255)] mt-8 p-4 rounded-3xl flex space-x-4">
-                        <div class="rounded-full bg-white p-4 ">
-                            <img src="./assets/checkbox.png" alt="">
+    history.innerHTML += `  <div  class="bg-[rgb(242,246,255)] mt-8 p-2 rounded-3xl flex space-x-4">
+                        <div class="rounded-full bg-white p-2 ">
+                            <img class="w-10" src="./assets/checkbox.png" alt="">
                         </div>
                         <h3 class="">${taskTitle} completed at <span class="italic">${timeString}</span></h3>
                     </div>`;
